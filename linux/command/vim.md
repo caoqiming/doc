@@ -1,2 +1,3 @@
-test
-![Alt text](./linux/command/picture/image.png)
+# vim
+
+![vim键盘图](picture/vim.png)
