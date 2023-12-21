@@ -45,7 +45,7 @@ jobs:
       - name: remove redundant path
         run: |
           sudo mv ./_site/doc/* ./_site
-          sudo rm ./_site/doc
+          sudo rm -rf ./_site/doc
           tree
 
       - name: Upload artifact
