@@ -36,14 +36,17 @@ jobs:
         with:
           path: doc
 
-      - name: debug path
-        run: tree
-
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
+
+      - name: remove redundant path
+        run: |
+          mv ./_site/doc 
+          ./_site 
+          rm ./_site/doc;tree
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
