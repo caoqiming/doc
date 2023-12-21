@@ -44,9 +44,9 @@ jobs:
 
       - name: remove redundant path
         run: |
-          mv ./_site/doc ./_site 
-          rm ./_site/doc
-          tree
+          mv ./_site/doc ./_site;
+          rm ./_site/doc;
+          tree;
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
