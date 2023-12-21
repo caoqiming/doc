@@ -26,15 +26,22 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout format repo
         uses: actions/checkout@v4
+        with:
+          repository: caoqiming/caoqiming.github.io
+
+      - name: Checkout doc repo
+        uses: actions/checkout@v4
+        with:
+          path: doc
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
+
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
-        with:
-          source: ./
-          destination: ./_site
+        
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
 
