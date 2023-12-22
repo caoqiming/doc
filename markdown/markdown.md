@@ -1,7 +1,6 @@
 ---
 layout: default
 title: markdwon 语法
-nav_order: 2
 ---
 
 # markdwon 语法
