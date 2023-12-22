@@ -1,8 +1,3 @@
----
-layout: default
-title: markdwon 语法
----
-
 # markdwon 语法
 
 ## 标题(Heading)

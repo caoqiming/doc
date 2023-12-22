@@ -36,6 +36,9 @@ jobs:
         with:
           path: doc
 
+      - name: create index
+        run: python3 ./script/gen_index.py
+
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
@@ -57,7 +60,6 @@ jobs:
           # sudo mv ./_site/doc/* ./_site
           # sudo rm -rf ./_site/doc
           tree ./_site
-          cat Gemfile.lock
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
