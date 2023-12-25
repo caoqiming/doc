@@ -1,4 +1,5 @@
 # Ellen DeGeneres Speech: Be True To Yourself
+
 Thank you, President Cowan, Mrs. President Cowen; distinguished guests, undistinguished guests, you know who you are, honored faculty and creepy Spanish teacher. And thank you to all the graduating class of 2009, I realize most of you are hungover and have splitting headaches and haven’t slept since Fat Tuesday, but you can’t graduate ’til I finish, so listen up.
 
 When I was asked to make the commencement speech, I immediately said yes. Then I went to look up what commencement meant which would have been easy if I had a dictionary, but most of the books in our house are Portia’s, and they’re all written in Australian. So I had to break the word down myself, to find out the meaning.
