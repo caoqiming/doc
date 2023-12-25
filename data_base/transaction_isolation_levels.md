@@ -82,7 +82,7 @@ For locking reads (SELECT with FOR UPDATE or FOR SHARE), UPDATE statements, and 
 
 ## 相关命令
 
-```SQL
+```sql
 --查看当前数据库隔离级别
 SELECT @@tx_isolation;
 --设置数据库隔离级别，设置完后需要重新连接
