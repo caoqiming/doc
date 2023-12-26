@@ -6,7 +6,7 @@
 
 To create the first tmux session
 
-```
+```bash
 tmux new
 ```
 
