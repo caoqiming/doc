@@ -1,5 +1,5 @@
 # MySQL 事务隔离级别
-
+佳佳同学的测试
 事务(Transaction)具有原子性(Atomicity)、一致性(Consistency)、隔离性(Isolation)、持久性(Durability)四个特性，简称 ACID，缺一不可。这里讲的是隔离性。
 
 ## 概念说明
