@@ -1,3 +1,3 @@
 # tar
 
-[check here](../../encoding_schemes/tar.md/#command)
+[check here](../../encoding_schemes/tar)
