@@ -40,3 +40,45 @@ VALUES (value1, value2, value3, ...);
 INSERT INTO users
 VALUES (NULL,'test', 'go@google.com', '2006-01-02', true);
 ```
+
+查询用时高的任务
+
+```sql
+select
+  C.sid,
+  S.event_time as start_time,
+  R.event_time as run_time,
+  TIMESTAMPDIFF(MINUTE,S.event_time,R.event_time) as deploy_time
+from
+  (
+    select
+      sid
+    from
+      custom_task
+    where
+      create_time > "2024-01-01 00:00:00"
+  ) C
+  inner join (
+    select
+      custom_task_id,
+      event_type,
+      event_time
+    from
+      custom_task_timeline
+    where
+      event_type = "Start"
+      AND create_time > "2024-01-01 00:00:00"
+  ) S on C.sid = S.custom_task_id
+  inner join (
+    select
+      custom_task_id,
+      event_type,
+      event_time
+    from
+      custom_task_timeline
+    where
+      event_type = "Run"
+      AND create_time > "2024-01-01 00:00:00"
+  ) R on C.sid = R.custom_task_id
+  order by deploy_time desc
+```

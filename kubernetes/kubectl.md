@@ -10,5 +10,10 @@ kubectl get node -l "topology.kubernetes.io/zone=cn-beijing-a"
 
 ```bash
 kubectl get pods --field-selector=status.phase!=Running,spec.restartPolicy=Always
-kubectl get queue --field-selector=spec.basic.cpu=0,spec.basic.rdma!=0
+```
+
+删除 Evicted 的 pod
+
+```bash
+kubectl get pod -n kube-system | grep Evicted | awk '{print $1}' | xargs kubectl delete pod -n kube-system
 ```
