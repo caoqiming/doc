@@ -4,4 +4,4 @@ LoRA (Low-Rank Adaptation of Large Language Models) is a popular and lightweight
 
 ## paper
 
-[LORA: LOW-RANK ADAPTATION OF LARGE LANGUAGE MODELS](./paper/lora.pdf)
+[LORA: LOW-RANK ADAPTATION OF LARGE LANGUAGE MODELS](https://arxiv.org/abs/2106.09685)
