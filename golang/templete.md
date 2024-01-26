@@ -1,5 +1,6 @@
 # template
 
+~~TODO:fix me, 这个页面渲染有问题，直接看 md 吧~~
 Go 语言内置了 text/template 和 html/template 两个模板库，专门用于处理网页 html 模板
 
 ## 最简单的例子
@@ -89,7 +90,7 @@ func main() {
 
 - if
 
-  ```
+  ```text
   {{if 表达式}} T1 {{end}}
   {{if 表达式}} T1 {{else}} T0 {{end}}
   {{if 表达式1}} T1 {{else if 表达式2}} T0 {{end}}
@@ -97,7 +98,7 @@ func main() {
 
 - range
 
-  ```
+  ```text
   {{range 数组引用}}
   {{.}} - 在range循环中，(点 .) 引用的是数组元素，而不是模版参数。
   {{end}}
@@ -105,7 +106,7 @@ func main() {
 
   > 提示：在 range 循环中，改变了 (点 . ) 的作用，(点 . )引用的是当前的数组元素。
 
-  ```
+  ```text
   {{range $index, $element := 数组或者map的引用}}
   索引: {{$index}}
   元素值: {{$element}}
@@ -114,7 +115,7 @@ func main() {
 
 - with
 
-```
+```text
 {{with struct类型对象}}
 {{.字段}}
 {{end}}
@@ -175,7 +176,7 @@ if err != nil {
 
 定义子模板
 
-```
+```text
 {{define "子模板名字"}}
 模板内容
 {{end}}
@@ -183,7 +184,7 @@ if err != nil {
 
 调用子模板
 
-```
+```text
 {{template "子模板名字" 参数}}
 ```
 
@@ -213,6 +214,6 @@ if err != nil {
 
 输出
 
-```
+```text
 ONE TWO
 ```
