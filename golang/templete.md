@@ -1,6 +1,7 @@
 # template
 
 ~~TODO:fix me, 这个页面渲染有问题，直接看 md 吧~~
+
 Go 语言内置了 text/template 和 html/template 两个模板库，专门用于处理网页 html 模板
 
 ## 最简单的例子
