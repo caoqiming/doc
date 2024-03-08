@@ -1,1 +1,6 @@
 # Argo CD
+
+Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes. Argo CD is implemented as a Kubernetes controller which continuously monitors running applications and compares the current, live state against the desired target state.
+
+You can install Helm charts through the UI, or in the declarative GitOps way.
+**Helm is only used to inflate charts with helm template.** The lifecycle of the application is handled by Argo CD instead of Helm.

@@ -13,6 +13,12 @@ go test -v -count=1 -run {测试函数名字}
 - -v Verbose 输出：在测试运行时记录所有测试。即使测试成功，也会打印所有来自 Log 和 Logf 调用的文本
 - -count=1 禁用缓存
 
+用 vscode 运行 golang 单测默认会开启缓存，非常坑。添加以下设置来关闭
+
+```text
+"go.testFlags": ["-count=1"]
+```
+
 ## mockgen
 
 用于生成接口的 mock 的实现
