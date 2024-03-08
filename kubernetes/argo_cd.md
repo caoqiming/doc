@@ -4,3 +4,5 @@ Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes. Argo C
 
 You can install Helm charts through the UI, or in the declarative GitOps way.
 **Helm is only used to inflate charts with helm template.** The lifecycle of the application is handled by Argo CD instead of Helm.
+
+> Order of precedence is `parameters > valuesObject > values > valueFiles > helm repository values.yaml`
