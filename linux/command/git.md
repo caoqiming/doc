@@ -18,4 +18,11 @@ git reset --hard remotes/origin/get_report_url
 git pull
 # 本地压缩commit
 git rebase -i commit-id
+
+# making a release
+git tag v1.0.0
+git push --tags
+# 推荐在这个状态下，再切出一个分支，用于后续的修复推送,不要直接在master分支修复
+git checkout -b v1
+git push -u origin v1
 ```

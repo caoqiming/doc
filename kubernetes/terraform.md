@@ -95,3 +95,27 @@ locals {
   owner        = "Community Team"
 }
 ```
+
+## Modules
+
+A Terraform module is a set of Terraform configuration files in a single directory. Modules are containers for multiple resources that are used together.
+
+```
+.
+├── main.tf
+├── variables.tf
+├── outputs.tf
+```
+
+Modules are called from within other modules using module blocks:
+
+```tf
+module "servers" {
+  source = "./app-cluster"
+
+  servers = 5
+}
+```
+
+The label immediately after the `module` keyword is a local name, which the calling module can use to refer to this instance of the module.
+All modules **require** a `source` argument, which is a meta-argument defined by Terraform. Its value is either the path to a local directory containing the module's configuration files, or a remote module source that Terraform should download and use.
