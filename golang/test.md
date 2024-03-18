@@ -60,7 +60,13 @@ Gomega 是 Ginkgo 官方推荐的断言匹配库，可以被其他断言库替�
 
 ### Ginkgo 使用
 
-cd 到 package 所在路径，然后`ginkgo bootstrap`，会在当前路径下自动生成`xxx_suite_test.go`文件。
+cd 到 package 所在路径，然后
+
+```bash
+ginkgo bootstrap
+```
+
+会在当前路径下自动生成`xxx_suite_test.go`文件。
 运行`ginkgo generate mljob_syncer`，就可以为`mljob_syncer.go`生产一个测试文件`mljob_syncer_test.go`
 
 ```go

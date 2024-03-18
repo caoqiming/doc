@@ -17,3 +17,9 @@ docker inspect 3298e6d0681b |grep Mounts -A 20
 ```bash
 docker system df -v
 ```
+
+指定命令运行镜像
+
+```bash
+
+```

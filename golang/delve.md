@@ -8,7 +8,7 @@ Delve 是一个专门为调试 Go 程序而生的调试工具，它比 GDB 更�
 cd 到 test 文件所在位置
 
 ```bash
-dlv test -- -test.run TestUpdateTLSConfig
+dlv test -- -test.run TestMljobRecord
 ```
 
 设置断点
