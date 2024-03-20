@@ -3,8 +3,8 @@
 ```bash
 # 修改上次的commit
 git commmit --amend
-# 查看历史记录
-git log
+# 查看最近5条历史记录
+git log -n 5
 # 查看diff
 git diff [--cached] [commit id] [path]
 # 删除远程仓库中被删除但本地仍存在的分枝信息
