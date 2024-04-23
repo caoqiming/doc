@@ -5,11 +5,21 @@ Delve 是一个专门为调试 Go 程序而生的调试工具，它比 GDB 更�
 
 ## 使用
 
+### unit test
+
 cd 到 test 文件所在位置
 
 ```bash
-dlv test -- -test.run TestMljobRecord
+dlv test -- -test.v  -test.count=1 -test.run TestMLJobRecord
 ```
+
+### debug
+
+```bash
+dlv debug main.go -- arg1 arg2
+```
+
+### 快捷键
 
 设置断点
 

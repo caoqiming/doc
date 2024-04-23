@@ -106,3 +106,11 @@ var _ = Describe("Books", func() {
 用容器节点，如`Describe`、`Context`和`When`来组织不同层次的测试，这三者功能完全一样，他们只是名字不同，为了帮助理解测试用的。
 用设置节点，如`BeforeEach`来为测试初始化状态
 用主题节点，如`It`来进行一些断言
+
+运行测试
+
+```bash
+go test -v -count=1 -ginkgo.focus "tls query"
+```
+
+以上这个命令会执行所有描述中包含 user（无论大小写）这个单词的测试。

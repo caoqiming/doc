@@ -82,3 +82,17 @@ from
   ) R on C.sid = R.custom_task_id
   order by deploy_time desc
 ```
+
+## 快速用 docker 部署一个 mysql
+
+```bash
+# 如果没有docker 先安装docker
+curl -fsSL https://get.docker.com | sudo bash -s docker --mirror Aliyun
+docker run --name mysql  -v /my/own/datadir:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=cqm -p 3306:3306 -d mysql:latest
+```
+
+连接到 mysql
+
+```bash
+
+```
