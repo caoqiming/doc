@@ -15,8 +15,22 @@ dlv test -- -test.v  -test.count=1 -test.run TestMLJobRecord
 
 ### debug
 
+从源码执行
+
 ```bash
 dlv debug main.go -- arg1 arg2
+```
+
+从二进制执行，build 时需要加上`-gcflags="all=-N -l"`禁用编译器优化和内联
+
+```bash
+dlv exec executable_file -- arg1 arg2
+```
+
+attach 到 pid
+
+```bash
+dlv attach pid
 ```
 
 ### 快捷键
