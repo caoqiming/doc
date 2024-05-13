@@ -48,7 +48,12 @@ c
 ```
 
 `n`是下一行，`s`是逐过程，可以进入调用的函数。
-`p`用于查看变量
+`p`用于查看变量，如果遇到变量被截断，可以调整设置
+
+```bash
+config max-string-len 1000
+config max-array-values 1000
+```
 
 全部快捷键
 
