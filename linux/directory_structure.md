@@ -12,6 +12,11 @@ bin 是 binary 的缩写，/bin 目录存放了非常重要的用户二进制文
 
 Linux 将所有东西都看成文件，设备也不例外，不论是实体的硬件设备还是虚拟设备。实体硬件比如第一块被检测到的硬盘会被挂载到`/dev/sda`，第二块会被挂载到`/dev/sdb`，以此类推。虚拟设备比如 null、random、stderr、stdin 和 stdout。
 
+### /dev/shm
+
+/dev/shm 中的文件是直接写入内存的。
+kubernetes 并没有提供设置 shm 大小的途径。只是有一个 workgroud 的办法：将 memory 类型的 emptyDir 挂载到/dev/shm 来解决
+
 ## /etc 配置文件目录
 
 etc 的含义是 Et cetera，表示一些相关的其他东西，`/etc`从 UNIX 早期开始就被用来存放配置文件，一直沿用至今。需要注意的是，`/etc`中存放的是系统配置文件，特定用户的配置文件放在每个用户的`/home`目录下。
