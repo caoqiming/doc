@@ -51,3 +51,7 @@ func SetStringPtrEmptyIfNil(s interface{}, keys []string) (err error) {
 	return
 }
 ```
+
+`reflect.Value` 和 `reflect.Type` 的 `Method()` 方法在用法和目的上存在一些差异。
+`reflect.Type` 的 `Method()` 用于获取类型的方法集中索引位置的方法。返回的 `reflect.Method` 只包含方法的静态属性，例如方法名称和方法签名。
+`reflect.Value` 的 `Method()` 方法则用于获取类型实例的方法。返回的 `reflect.Value` 可以被调用。

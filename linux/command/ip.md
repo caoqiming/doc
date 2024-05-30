@@ -1,6 +1,6 @@
 # ip
 
-# ip addr show
+## ip addr show
 
 可以省略为`ip a`，显示网卡以及配置的地址信息
 

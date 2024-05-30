@@ -3,6 +3,14 @@
 Delve 是一个专门为调试 Go 程序而生的调试工具，它比 GDB 更强大，尤其时调试多 goroutine 高并发的 Go 程序。
 [github 地址](https://github.com/derekparker/delve)
 
+## install
+
+```bash
+git clone https://github.com/go-delve/delve
+cd delve
+go install github.com/go-delve/delve/cmd/dlv
+```
+
 ## 使用
 
 ### unit test

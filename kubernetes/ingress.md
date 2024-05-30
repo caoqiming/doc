@@ -2,7 +2,11 @@
 
 An API object that manages external access to the services in a cluster, typically HTTP. Ingress may provide load balancing, SSL termination and name-based virtual hosting.
 
-ingress 不是 load balancer，它包含了所有的路由规则，定制的 header 和 TLS 配置。ingress controller 实际上扮演了 load balancer 的角色。
+ingress 不是 load balancer，它包含了所有的路由规则，定制的 header 和 TLS 配置。ingress controller 实际上扮演了 load balancer 的角色。 ingress controller 之于 ingress 就相当于 kube-proxy 之于 service.
+
+随着 Ingress 在实践中的大量应用，很多用户发现这种用法会带来一些问题。集群里有不同的租户，他们对 Ingress 的需求差异很大甚至有冲突，无法部署在同一个 Ingress Controller 上。多个 Ingress 对象没有很好的逻辑分组方式，管理和维护成本很高。所以，Kubernetes 就又提出了一个 Ingress Class 的概念，让它插在 Ingress 和 Ingress Controller 中间，作为流量规则和控制器的协调人，解除了 Ingress 和 Ingress Controller 的强绑定关系。
+
+ingress controller -- ingress class -- ingress
 
 ## 定义一个 ingress
 

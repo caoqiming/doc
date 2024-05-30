@@ -7,7 +7,7 @@
 To create the first tmux session
 
 ```bash
-tmux new
+tmux new-session -s mysession
 ```
 
 进入前置操作`control + B`
@@ -15,4 +15,4 @@ tmux new
 `o`切换屏幕，空格切换上下分屏与左右分屏
 `prefix Up,Down,Left,Right`
 
-`tmux ls`查看会话，`tmux attach-session -t my_session`重新接入某个会话
+`tmux ls`查看会话，`tmux attach -t my_session`重新接入某个会话
