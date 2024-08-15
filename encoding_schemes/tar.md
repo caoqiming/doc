@@ -22,12 +22,6 @@ Create an archive file archive.tar.gz from the file README.txt and directory src
 tar -cavf archive.tar.gz README.txt src
 ```
 
-Extract contents for the archive.tar.gz into the current directory:
-
-```bash
-tar -xvf archive.tar.gz
-```
-
 > 一部分参数
 > -c, --create create a new archive
 > -x, --extract, --get extract files from an archive

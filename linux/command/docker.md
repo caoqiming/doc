@@ -1,5 +1,15 @@
 # docker
 
+## install
+
+```bash
+# 如果没有docker 先安装docker
+curl -fsSL https://get.docker.com | sudo bash -s docker --mirror Aliyun
+docker run --name mysql  -v /my/own/datadir:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=cqm -p 3306:3306 -d mysql:latest
+```
+
+## usage
+
 查看 volume
 
 ```bash

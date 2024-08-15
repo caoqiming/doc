@@ -1,6 +1,8 @@
 # git
 
 ```bash
+git config --global user.name "Your Name"
+git config --global user.email "your_email@example.com"
 # 修改上次的commit
 git commmit --amend
 # 查看最近5条历史记录
@@ -25,4 +27,19 @@ git push --tags
 # 推荐在这个状态下，再切出一个分支，用于后续的修复推送,不要直接在master分支修复
 git checkout -b v1
 git push -u origin v1
+```
+
+## stash
+
+```bash
+# 将当前工作区和暂存区的内容保存到堆栈中，并添加描述信息
+git stash save "message"
+# 指定pop某一个
+git stash pop stash@{1}
+# 查看所有stash
+git stash list
+# 删除stash
+git stash drop stash@{1}
+# 删除所有stash
+git stash clear
 ```
