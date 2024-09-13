@@ -110,7 +110,7 @@ var _ = Describe("Books", func() {
 运行测试
 
 ```bash
-go test -v -count=1 -ginkgo.focus "tls query"
+go test -v -count=1 -ginkgo.focus "user"
 ```
 
 以上这个命令会执行所有描述中包含 user（无论大小写）这个单词的测试。

@@ -34,3 +34,15 @@ kubectl port-forward pod/mypod 8888:5000
 # Listen on a random port locally, forwarding to 5000 in the pod
 kubectl port-forward pod/mypod :5000
 ```
+
+给节点打标签
+
+```bash
+kubectl label nodes 192.18.128.2 cqm-test/no-npd=true
+```
+
+删除标签
+
+```bash
+kubectl label nodes 192.18.128.2 cqm-test/no-npd-
+```
