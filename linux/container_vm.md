@@ -20,3 +20,18 @@ since the VM has a virtual operating system of its own, the hypervisor plays an 
 
 Unlike a VM which provides hardware virtualization, a container provides operating-system-level virtualization by abstracting the “user space”. The one big difference between containers and VMs is that containers **share** the host system’s kernel with other containers.
 This diagram shows you that containers package up just the user space, and not the kernel or virtual hardware like a VM does. Each container gets its own isolated user space to allow multiple containers to run on a single host machine. We can see that all the operating system level architecture is being shared across containers. The only parts that are created from scratch are the bins and libs. This is what makes containers so lightweight.
+
+### containerd and runc
+
+runc 是低层次的容器运行时，它直接与内核交互，执行具体的容器操作。
+containerd 则是一个更高层次的运行时，负责管理多个容器，并使用 runc 来执行具体的容器操作。
+
+```txt
+[ Kubernetes/Swarm ]
+        |
+[ containerd]
+        |
+[  runc  ]
+        |
+[Linux Kernel (cgroups, namespaces)]
+```

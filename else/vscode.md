@@ -14,3 +14,8 @@
 
 - 跳转到行数 `Control + G`
 - 快速打开文件 `Command + P`
+
+## 命令
+
+在另外一个窗口打开该工作区，在多屏幕的情况下很有用
+`Workspace: Duplicate As Workspace in New Window`
