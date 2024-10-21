@@ -41,6 +41,15 @@ INSERT INTO users
 VALUES (NULL,'test', 'go@google.com', '2006-01-02', true);
 ```
 
+- 添加字段
+
+```sql
+ALTER TABLE
+  table_name
+ADD
+  `name` varchar(32) DEFAULT NULL COMMENT '注释';
+```
+
 查询用时高的任务
 
 ```sql
@@ -95,4 +104,21 @@ docker run --name mysql  -v /my/own/datadir:/var/lib/mysql -e MYSQL_ROOT_PASSWOR
 
 ```bash
 
+```
+
+## mysql 时间类型
+
+MySQL 提供了 DATE, DATETIME, TIMESTAMP 三种类型。
+
+- DATE 类型没有具体的时间点，只能精确到【日期】，即 YYYY-MM-DD
+- DATETIME 则同时支持【日期】和【时间】，格式为 YYYY-MM-DD hh:mm:ss，**不带时区信息**，占 8 个字节
+- TIMESTAMP 同样也支持【日期】和【时间】，还有时区的信息。支持时间范围，从'1970-01-01 00:00:01' UTC 到 '2038-01-19 03:14:07',
+
+> DATETIME 以及 TIMESTAMP，二者除了整秒之外，还可以支持小数点后的部分，最多到 microseconds （6 位）精度。格式为 'YYYY-MM-DD hh:mm:ss[.fraction]'，比如 '2038-01-19 03:14:07.999999'
+
+```sql
+CREATE TABLE t1 (
+  ts TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  dt DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
 ```
