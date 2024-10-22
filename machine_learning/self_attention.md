@@ -4,38 +4,38 @@
 
 假设输入序列为
 
-```math
+$$
 X=[x_1,...,x_N] \in \Bbb{R}^{D_x×N}
-```
+$$
 
 embedding 后得到 $A=[a_1,...,a_N] \in \Bbb{R}^{D_a×N}$
 $N$为输入长度，$D_a$为 embedding 向量的维度
 
 将 embedding 映射到三个不同的空间（QKV）
 
-```math
+$$
 Q = W^qA, \quad W^q \in \Bbb{R}^{D_k×D_a}
-```
+$$
 
-```math
+$$
 K = W^kA, \quad W^k \in \Bbb{R}^{D_k×D_a}
-```
+$$
 
-```math
+$$
 V = W^vA, \quad W^v \in \Bbb{R}^{D_v×D_a}
-```
+$$
 
 计算注意力分布
 
-```math
+$$
 A = \frac{K^TQ}{\sqrt{D_k}}
-```
+$$
 
-其中$D_k$是 $W^q$和$W^k$的第一个纬度的大小，这里用于缩放，避免后续 softmax 之后差距过大。（${softmax}(z_i) = \frac{e^{z_i}}{\sum_{j=1}^{N} e^{z_j}}$）
+其中$D_k$是 $W^q$和$W^k$的第一个纬度的大小，这里用于缩放，避免后续 softmax 之后差距过大。 （${softmax}(z_i) = \frac{e^{z_i}}{\sum_{j=1}^{N} e^{z_j}}$）
 
-```math
+$$
 \hat{A} = softmax(A)
-```
+$$
 
 根据注意力分布$\hat{A}$，加权求和得到输出
 
@@ -59,17 +59,17 @@ A = \frac{K^TQ}{\sqrt{D_k}}
 In self-attention, we work with the same input sequence. In cross-attention, we mix or combine two different input sequences. Note that in cross-attention, the two input sequences x_1 and x_2 can have different numbers of elements. However, their embedding dimensions must match.
 和 self attention 的区别仅在于，
 
-```math
+$$
 Q = W^qA_1, \quad W^q \in \Bbb{R}^{D_k×D_a}
-```
+$$
 
-```math
+$$
 K = W^kA_2, \quad W^k \in \Bbb{R}^{D_k×D_a}
-```
+$$
 
-```math
+$$
 V = W^vA_2, \quad W^v \in \Bbb{R}^{D_v×D_a}
-```
+$$
 
 如果输入 $A_1$ 和 $A_2$ 相同的话，就和 self attention 一样了
 假设输入 $A_1$ 维度为 $n×d$ ，$A_2$ 维度为$m×d$，其中 d 是 embedding 的维度。那么计算出的 attention 的维度是 $n×m$ ，最终输出维度 $n×d_v$
