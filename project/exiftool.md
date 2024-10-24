@@ -4,5 +4,5 @@
 
 ```bash
 AUTHOR="glimmer"
-exiftool -overwrite_original -Creator="$AUTHOR" -Author="$AUTHOR"   reference.pdf
+exiftool -overwrite_original -Creator="$AUTHOR" -Author="$AUTHOR"   xxx.pdf
 ```

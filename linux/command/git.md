@@ -1,5 +1,7 @@
 # git
 
+常用命令
+
 ```bash
 git config --global user.name "Your Name"
 git config --global user.email "your_email@example.com"
@@ -42,4 +44,19 @@ git stash list
 git stash drop stash@{1}
 # 删除所有stash
 git stash clear
+```
+
+## blame
+
+使用 git blame，可以逐行查看在一个特定文件中谁更改了什么内容，这对于一个协作团队来说很有用。
+`--color-by-age`根据改动的时间用不同颜色显示，`-L 1,10` 只显示 1 到 10 行
+
+```bash
+git blame --color-by-age -L 1,10 $FILE_PATH
+```
+
+找到有问题的一行的 commit id 之后可以通过 `git log` 查看
+
+```bash
+git show $COMMIT_ID
 ```

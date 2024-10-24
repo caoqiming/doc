@@ -31,7 +31,7 @@ $$
 A = \frac{K^TQ}{\sqrt{D_k}}
 $$
 
-其中$D_k$是 $W^q$和$W^k$的第一个纬度的大小，这里用于缩放，避免后续 softmax 之后差距过大。 （${softmax}(z_i) = \frac{e^{z_i}}{\sum_{j=1}^{N} e^{z_j}}$）
+其中$D_k$是 $W^q$和$W^k$的第一个维度的大小，这里用于缩放，避免后续 softmax 之后差距过大。 （${softmax}(z_i) = \frac{e^{z_i}}{\sum_{j=1}^{N} e^{z_j}}$）
 
 $$
 \hat{A} = softmax(A)
