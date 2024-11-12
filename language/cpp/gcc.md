@@ -4,7 +4,7 @@ gcc 的全称是 GNU Compiler Collection，它是一个能够编译多种语言�
 [编译过程](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/848949fa0a0e4fd7b72961c0853b571a~tplv-k3u1fbpfcp-zoom-in-crop-mark:1512:0:0:0.awebp)
 ~~TODO:画一遍这个图~~
 
-## g++ 常用 flag
+## g++
 
 | 选项名             | 作用                                                                                                                               |
 | ------------------ | ---------------------------------------------------------------------------------------------------------------------------------- |
@@ -17,3 +17,9 @@ gcc 的全称是 GNU Compiler Collection，它是一个能够编译多种语言�
 | -shared            | 创建共享库                                                                                                                         |
 | -x                 | 指定以下输入文件的语言。允许的语言包括：c++汇编程序无“none”表示恢复到默认行为 根据文件的扩展名猜测语言。                           |
 | -fpic              | 生成位置无关代码（PIC，Position Independent Code）。位置无关代码意味着它可以在主内存中的任何地方执行，而无论其实际物理地址是什么。 |
+
+安装 g++
+
+```bash
+apt install build-essential
+```

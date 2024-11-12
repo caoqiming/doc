@@ -3,6 +3,8 @@
 登录 linux 时执行的顺序为
 `/etc/profile` -> (`~/.bash_profile` | `~/.bash_login` | `~/.profile`) -> `~/.bashrc` -> `/etc/bashrc` -> `~/.bash_logout`
 
+如果是 zsh 会执行`~/.zshrc`
+
 ## PATH
 
 ```bash

@@ -13,6 +13,8 @@ git log -n 5
 git diff [--cached] [commit id] [path]
 # 删除远程仓库中被删除但本地仍存在的分枝信息
 git remote update origin --prune
+# 指定分支push
+git push origin <本地分支名>:<远程分支名>
 # 删除远程分支
 git push origin --delete <branch>
 # 删除本地分支
