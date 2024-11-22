@@ -26,5 +26,20 @@
 - 如果希望 stderr 重定向到 file，可以这样写`command 2>file`。
 - 如果希望将 stdout 和 stderr 合并后重定向到 file，可以这样写`command >file 2>&1`。这个命令首先将 stdout（文件描述符为 1）重定向到名为 "file" 的文件，然后将 stderr（文件描述符为 2）重定向到当前的 stdout（也就是 "file"）。
 - 如果希望对 stdin 和 stdout 都重定向，stdin 重定向到 file1，将 stdout 重定向到 file2，可以这样写`command < file1 >file2`
+- 如果希望在 bash 脚本中重定向输出
+
+```bash
+# 定义日志文件
+log_file="log"
+exec 1>>"$log_file"
+exec 2>>"$log_file"
+```
+
+如果希望 stdout 和文件都有输出
+
+```bash
+log_file="log"
+exec > >(tee -a "$log_file") 2>&1
+```
 
 > _这里的 2 和 > 之间不可以有空格，2> 是一体的时候才表示错误输出。_

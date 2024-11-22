@@ -37,6 +37,8 @@ command -v zsh | sudo tee -a /etc/shells
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
+> `sh -c` 命令，它可以让 bash 将一个字串作为完整的命令来执行，这样就可以将 sudo 的影响范围扩展到整条命令。
+
 #### 插件
 
 zsh 的设置在`~/.zshrc`
@@ -99,6 +101,18 @@ if [[ -n "$DEBUG" ]]; then
 
 fi
 
+```
+
+### 数组
+
+```bash
+my_array=("apple" "banana" "cherry" "date" "elderberry")
+
+# 遍历数组的每个元素并打印出来
+for element in "${my_array[@]}"
+do
+    echo "$element"
+done
 ```
 
 ### set

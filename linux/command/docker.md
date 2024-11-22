@@ -63,6 +63,14 @@ capsh --print
 docker cp /path/on/host my_container:/path/in/container
 ```
 
+### 清除所有不在运行中的容器
+
+```bash
+docker container prune -f
+# 清理 none none 的镜像
+docker rmi $(docker images -f "dangling=true" -q)
+```
+
 ## 镜像
 
 ## 将容器保存为镜像

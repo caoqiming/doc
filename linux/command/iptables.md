@@ -16,7 +16,17 @@ iptables 默认维护着 4 个表和 5 个链，所有的防火墙策略规则�
 - PREROUTING（路由前过滤）
 - POSTROUTING（路由后过滤）
 
-## 语法
+## usage
+
+install
+
+```bash
+# For Debian-based distributions
+sudo apt-get install iptables
+
+# For RPM-based distributions
+sudo yum install iptables
+```
 
 ```
 iptables [-t table] COMMAND [chain] CRETIRIA -j ACTION
@@ -27,6 +37,13 @@ iptables [-t table] COMMAND [chain] CRETIRIA -j ACTION
 ```bash
 iptables -A INPUT -ptcp --dport 80 -j ACCEPT
 ```
+
+防火墙处理数据包的四种方式
+
+1. ACCEPT 允许数据包通过
+2. DROP 直接丢弃数据包，不给任何回应信息
+3. REJECT 拒绝数据包通过，必要时会给数据发送端一个响应的信息。
+4. LOG 在/var/log/messages 文件中记录日志信息，然后将数据包传递给下一条规则
 
 ### 查看规则
 
