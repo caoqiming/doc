@@ -122,3 +122,72 @@ ip r del <NETWORK/MASK>
 ```bash
 ip neigh flush 192.168.0.102
 ```
+
+## ip netns
+
+网络命令空间相关命令
+
+### ip netns list
+
+查看网络命名空间
+
+### ip netns add <name>
+
+添加一个命名空间
+
+### ip netns exec <name> <command>
+
+在命名空间执行命令
+
+```bash
+ip netns exec <name> bash  #打开虚拟网络环境ns的bash窗口
+```
+
+## ip link
+
+link 表示 link layer 的意思，即链路层。该命令用于管理和查看网络接口(网卡)。
+
+### ip link show
+
+```bash
+➜  ~ ip link show
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:16:3e:23:10:51 brd ff:ff:ff:ff:ff:ff
+3: docker0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN mode DEFAULT group default
+    link/ether 02:42:a8:a5:28:0e brd ff:ff:ff:ff:ff:ff
+```
+
+### ip link add
+
+```text
+Usage: ip link add [link DEV] [ name ] NAME
+                   [ txqueuelen PACKETS ]
+                   [ address LLADDR ]
+                   [ broadcast LLADDR ]
+                   [ mtu MTU ] [index IDX ]
+                   [ numtxqueues QUEUE_COUNT ]
+                   [ numrxqueues QUEUE_COUNT ]
+                   type TYPE [ ARGS ]
+
+TYPE := { vlan | veth | vcan | vxcan | dummy | ifb | macvlan | macvtap |
+          bridge | bond | team | ipoib | ip6tnl | ipip | sit | vxlan |
+          gre | gretap | erspan | ip6gre | ip6gretap | ip6erspan |
+          vti | nlmon | team_slave | bond_slave | bridge_slave |
+          ipvlan | ipvtap | geneve | vrf | macsec | netdevsim | rmnet }
+```
+
+添加网卡，只能是虚拟网卡
+
+```bash
+ip link add name veth0 type veth peer name veth1
+```
+
+创建虚拟网卡，成对出现 veth0 veth1
+
+name 标签可以省略：
+
+```bash
+ip link add veth0 type veth peer name veth1
+```
