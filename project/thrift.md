@@ -2,6 +2,12 @@
 
 ## install
 
+```bash
+sudo apt install thrift-compiler
+```
+
+或者从源码安装
+
 参考[环境准备](https://thrift.apache.org/docs/install/debian.html)
 
 libboost-all-dev 安装失败的话尝试用 aptitude

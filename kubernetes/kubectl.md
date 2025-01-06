@@ -46,3 +46,9 @@ kubectl label nodes 192.18.128.2 cqm-test/no-npd=true
 ```bash
 kubectl label nodes 192.18.128.2 cqm-test/no-npd-
 ```
+
+自定义返回内容
+
+```bash
+kubectl get mljob -o custom-columns=NAME:.metadata.name,ANNOTATION:.metadata.annotations."yourannokey"
+```
