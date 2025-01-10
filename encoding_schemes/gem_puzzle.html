@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Gem and Chessboard Puzzle</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script src="gem_puzzle.js"></script>
+    <style>
+      /* 使所有具有 id 以 "chessboard-index-" 开头的 div 居中显示 */
+      div[id^="chessboard"] {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* 使所有 p 标签内的文字靠左对齐，并设置左边距为相对值 */
+      p {
+        text-align: left;
+        margin-left: 30%; /* 使用百分比作为相对值 */
+        margin-right: 30%; /* 使用百分比作为相对值 */
+      }
+    </style>
+  </head>
+  <body>
+    <p>1. First we mark each square on the chessboard with 0 to 63</p>
+    <div id="chessboard"></div>
+    <p>
+      2. Addresses with exactly one bit set to 1 are used as parity check bits
+    </p>
+    <div id="chessboard-index"></div>
+    <p>
+      3. If a data bit's address has a 1 in a particular position, it
+      participates in that corresponding parity check calculation. The locations
+      involved in the parity calculation are marked with corresponding colors.
+    </p>
+    <p>
+      The first bit of the address of these blocks (from least significant bit
+      to most significant bit) is 1
+    </p>
+    <div id="chessboard-index-0"></div>
+    <p>
+      The seconds bit of the address of these blocks (from least significant bit
+      to most significant bit) is 1
+    </p>
+    <div id="chessboard-index-1"></div>
+    <p>
+      The third bit of the address of these blocks (from least significant bit
+      to most significant bit) is 1
+    </p>
+    <div id="chessboard-index-2"></div>
+    <p>
+      The fourth bit of the address of these blocks (from least significant bit
+      to most significant bit) is 1
+    </p>
+    <div id="chessboard-index-3"></div>
+    <p>
+      The fifth bit of the address of these blocks (from least significant bit
+      to most significant bit) is 1
+    </p>
+    <div id="chessboard-index-4"></div>
+    <p>
+      The sixth bit of the address of these blocks (from least significant bit
+      to most significant bit) is 1
+    </p>
+    <div id="chessboard-index-5"></div>
+    <p>
+      4. Next, we just need to calculate the parity of the above 6 areas to get
+      6 bits. Note that the order of these 6 bits needs to be arranged from low
+      to high in the order mentioned above. We can think of it as an address
+      pointing to a certain square. If you want to make this address point to
+      the gem by flipping the chess piece, you just need to XOR the address of
+      the gem with the current address, and flip the result to the chess piece
+      corresponding to the address.
+    </p>
+  </body>
+</html>

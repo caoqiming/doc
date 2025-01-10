@@ -66,6 +66,12 @@ Importantly, this game doesn't require an 8x8 board; it merely requires the tota
 
 > This solution draws on memory error correction algorithms, specifically Hamming code.
 
+## Practice
+
+The solution mentioned above is from the perspective of Hamming code. In actual implementation, it can be simplified a little bit, and there is no need to consider where the check position is. It only needs to calculate 6 sets of parity.
+
+[click here to see image demo](./gem_puzzle.html)
+
 ## Code
 
 I implemented this algorithm, and more interesting stuff can be found [here](https://github.com/caoqiming/gem-and-chessboard-puzzle).
