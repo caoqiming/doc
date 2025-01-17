@@ -89,23 +89,24 @@ mnt 是 mount 的缩写，各种设备挂载到系统后，会在`/mnt`目录下
 
 ## /proc
 
-### /proc/pid
+### /proc/{pid}
 
-每一个`/proc/pid`目录中还存在一系列目录和文件，这些文件和目录记录的都是关于 pid 对应进程的信息．例如，在`/proc/pid` 的目录下存在一个 task 目录，在 task 目录下又存在 `task/tid` 这样的目录，这个目录就是包含此进程中的每个线程的信息，其中的 tid 是内核线程的 tid
+每一个`/proc/{pid}`目录中还存在一系列目录和文件，这些文件和目录记录的都是关于 pid 对应进程的信息．例如，在`/proc/{pid}` 的目录下存在一个 task 目录，在 task 目录下又存在 `task/tid` 这样的目录，这个目录就是包含此进程中的每个线程的信息，其中的 tid 是内核线程的 tid
 
-`/proc/pid/fdinfo/` 当前进程打开的所有的文件的文件描述符.
-`/proc/pid/limits` 该文件显示了每个进程的软中断,硬中断和度量单位
-`/proc/pid/maps` 包含了当前进程映射的内存区域以及他们的访问权限.
-`/proc/pid/mem` 该文件可以通过 open,read,seek 访问进程的内存页.
-`/proc/pid/mountinfo` 这个文件主要是包含了挂载信息。 在宿主机上执行`cat /proc/self/mountinfo | grep cgroup | grep pod`可以查看是否有 cgroup mounts leak
+`/proc/{pid}/stat` 进程的各种状态信息，pid,命令名（可执行文件名），进程状态，父进程 pid 还有很多其他信息，如 CPU 时间，虚拟内存大小，代码段地址，栈地址，堆地址，退出码等等 [更多信息](https://man7.org/linux/man-pages/man5/proc_pid_stat.5.html)
+`/proc/{pid}/fdinfo/` 当前进程打开的所有的文件的文件描述符.
+`/proc/{pid}/limits` 该文件显示了每个进程的软中断,硬中断和度量单位
+`/proc/{pid}/maps` 包含了当前进程映射的内存区域以及他们的访问权限.
+`/proc/{pid}/mem` 该文件可以通过 open,read,seek 访问进程的内存页.
+`/proc/{pid}/mountinfo` 这个文件主要是包含了挂载信息。 在宿主机上执行`cat /proc/self/mountinfo | grep cgroup | grep pod`可以查看是否有 cgroup mounts leak
 
 ### /proc/tid
 
-每一个`/proc/tid`目录中还存在一系列目录和文件，这些文件和目录记录的都是有关线程 tid 对应的信息，这些信息与具体的`/proc/pid/task/tid`的目录相同，所记录的信息也是相同的
+每一个`/proc/tid`目录中还存在一系列目录和文件，这些文件和目录记录的都是有关线程 tid 对应的信息，这些信息与具体的`/proc/{pid}/task/tid`的目录相同，所记录的信息也是相同的
 
 ### /proc/self
 
-这是一个 link,当进程访问此链接时，就会访问这个进程本身的`/proc/pid`目录
+这是一个 link,当进程访问此链接时，就会访问这个进程本身的`/proc/{pid}`目录
 
 ### /proc/thread-self
 

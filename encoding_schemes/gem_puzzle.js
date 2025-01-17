@@ -417,49 +417,6 @@ new p5(sketch8);
 
 // 以下为4*4的部分
 
-function sketch4_1(p) {
-  p.setup = function () {
-    // 找到想把该画布插入的位置
-    let divElement = document.getElementById("chessboard4");
-    let canvas = p.createCanvas(200, 200);
-    canvas.parent(divElement);
-
-    // 计算每个格子的大小
-    cellSize_4 = p.width / boardSize_4;
-    // 设置文本对齐方式为居中
-    p.textAlign(p.CENTER, p.CENTER);
-    // 设置文本大小
-    p.textSize(10);
-    p.frameRate(5);
-  };
-  p.draw = function () {
-    // 设置背景颜色为白色
-    p.background(255);
-    // 遍历棋盘的每一行
-    for (let row = 0; row < boardSize_4; row++) {
-      // 遍历棋盘的每一列
-      for (let col = 0; col < boardSize_4; col++) {
-        // 计算当前格子的索引
-        let index = row * boardSize_4 + col;
-        // 根据索引的奇偶性来设置格子的填充颜色
-        p.fill((index + row) % 2 === 0 ? 200 : 255);
-        // 绘制当前格子
-        p.rect(col * cellSize_4, row * cellSize_4, cellSize_4, cellSize_4);
-        // 设置文本颜色为黑色
-        p.fill(0);
-        // 将数字转换为长度为6的二进制字符串
-        let binaryIndex = index.toString(2).padStart(4, "0");
-        // 在当前格子中显示二进制数字
-        p.text(
-          binaryIndex,
-          col * cellSize_4 + cellSize_4 / 2,
-          row * cellSize_4 + cellSize_4 / 2
-        );
-      }
-    }
-  };
-}
-
 // index-0
 function sketch4_2(p) {
   p.setup = function () {
@@ -648,7 +605,6 @@ function sketch4_5(p) {
   };
 }
 
-new p5(sketch4_1);
 new p5(sketch4_2);
 new p5(sketch4_3);
 new p5(sketch4_4);

@@ -31,6 +31,11 @@ git push --tags
 # 推荐在这个状态下，再切出一个分支，用于后续的修复推送,不要直接在master分支修复
 git checkout -b v1
 git push -u origin v1
+
+# 统计代码行数
+git ls-files | xargs wc -l | grep total
+git ls-files | grep '\.md$' | xargs wc -l | grep total
+
 ```
 
 ## stash
