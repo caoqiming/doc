@@ -124,3 +124,16 @@ set 命令用于改变 shell 的行为，`+` 和 `-` 表示关闭和打开特定
 - `set -o pipefail`：如果脚本中的管道命令失败，那么整个脚本就会退出。
 - `set -n`：仅读取脚本但不执行，用于检查脚本是否有语法错误。
 - `set -v`：将输入到 shell 的命令打印出来，这对于跟踪脚本的执行很有用。
+
+### trap
+
+trap 命令用于捕获并处理信号。
+
+```bash
+cleanup() {
+  echo "Received signal, exiting with status 0..."
+  exit 0
+}
+
+trap cleanup SIGINT SIGTERM
+```
