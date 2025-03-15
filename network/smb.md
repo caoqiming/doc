@@ -13,7 +13,7 @@ smb://{you local ip}
 ### mac os
 
 - share
-  Searcn `file sharing` in setiings.
+  Search `file sharing` in setiings.
 
 - access
   Open Finder. Click "Go" > "Connect to Server."
