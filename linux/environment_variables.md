@@ -24,3 +24,13 @@ cat /proc/{PID}/environ | tr '\0' '\n'
 
 这个文件的分割符是`\0`，因此这里将其替换为换行方便查看
 这里的环境变量是这个进程初始的环境变量，想要获取当前的环境变量需要`ptrace`系统调用
+
+## 常用环境变量
+
+~~备份一下，这个丢了就很费劲~~
+
+```bash
+source /Users/glimmer/.gvm/scripts/gvm
+eval "$(/opt/homebrew/bin/brew shellenv)"
+export GOPROXY=https://goproxy.cn
+```

@@ -1,0 +1,23 @@
+# sad story
+
+这里记录一些在 UE 里遇到的坑
+
+## vscode
+
+因为 xcode 不能点击跳转，改用 vscode，~~折腾环境真心累~~
+
+1. UE 无法生成 vsocode 项目，这个需要把 UE 的默认编辑器设置为 vscode 才行，只改成 vscode 是没用的，必须再点一下保存为默认设置才行。这个办法还是我自己试出来的
+2. 按官网的教程正在`.vscode/c_cpp_properties.json`里添加了
+
+   ```json
+       "includePath": [
+           "${workspaceFolder}/Intermediate/**",
+           "${workspaceFolder}/Plugins/**",
+           "${workspaceFolder}/Source/**",
+           "/Users/Shared/Epic Games/UE_5.5/Engine/Source/Runtime/Core/Public/**"
+       ],
+   ```
+
+   代码点击是能跳转的，但是会有红色波浪线的各种报错，编译也是可以编译的。暂时没找到解决方案，干脆在 vscode 里把 `C_Cpp: Error Squiggles` 禁用了，先苟着吧，又不是不能用。
+
+3. 接着 2，最后把 c++ 的插件的设置 `C/C++ Edit Configurations(UI)` 里设置编译器路径，从 xcode 的 clang++ 修改为 `/usr/bin/clang++`

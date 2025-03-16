@@ -242,3 +242,211 @@ FruitMapCopy.Empty();		// You can also use Reset() here.
 ```
 
 ## Sort
+
+You can sort by key or by value using the KeySort or ValueSort functions, respectively. Both functions take a binary predicate which specifies the sort order. After sorting, iteration over the map presents the elements in sorted order, but this behavior is only guaranteed until the next time you modify the map. Sorting is unstable, so equivalent elements in a TMultiMap may appear in any order.
+
+```cpp
+FruitMap.KeySort([](int32 A, int32 B) {
+	return A > B; // sort keys in reverse
+});
+// FruitMap == [
+// 	{ Key: 9, Value: "Melon"  },
+// 	{ Key: 5, Value: "Mango"  },
+// 	{ Key: 4, Value: "Kiwi"   },
+// 	{ Key: 3, Value: "Orange" }
+// ]
+
+FruitMap.ValueSort([](const FString& A, const FString& B) {
+	return A.Len() < B.Len(); // sort strings by length
+});
+// FruitMap == [
+// 	{ Key: 4, Value: "Kiwi"   },
+// 	{ Key: 5, Value: "Mango"  },
+// 	{ Key: 9, Value: "Melon"  },
+// 	{ Key: 3, Value: "Orange" }
+// ]
+```
+
+## Operators
+
+Maps strictly own their elements, so copying a map is deep; the new map will have its own copy of the elements.
+
+```cpp
+TMap<int32, FString> NewMap = FruitMap;
+NewMap[5] = "Apple";
+NewMap.Remove(3);
+// FruitMap == [
+// 	{ Key: 4, Value: "Kiwi"   },
+// 	{ Key: 5, Value: "Mango"  },
+// 	{ Key: 9, Value: "Melon"  },
+// 	{ Key: 3, Value: "Orange" }
+// ]
+// NewMap == [
+// 	{ Key: 4, Value: "Kiwi"  },
+// 	{ Key: 5, Value: "Apple" },
+// 	{ Key: 9, Value: "Melon" }
+// ]
+```
+
+TMap supports move semantics, which can be invoked using the MoveTempfunction. After a move, the source map is guaranteed to be empty:
+
+```cpp
+FruitMap = MoveTemp(NewMap);
+// FruitMap == [
+// 	{ Key: 4, Value: "Kiwi"  },
+// 	{ Key: 5, Value: "Apple" },
+// 	{ Key: 9, Value: "Melon" }
+// ]
+// NewMap == []
+```
+
+## Slack
+
+In the code below, the Reserve function allocates space for the map to contain up to ten elements:
+
+```cpp
+FruitMap.Reserve(10);
+for (int32 i = 0; i < 10; ++i)
+{
+	FruitMap.Add(i, FString::Printf(TEXT("Fruit%d"), i));
+}
+// FruitMap == [
+// 	{ Key: 9, Value: "Fruit9" },
+// 	{ Key: 8, Value: "Fruit8" },
+// 	...
+// 	{ Key: 1, Value: "Fruit1" },
+// 	{ Key: 0, Value: "Fruit0" }
+// ]
+```
+
+To remove all slack from a TMap, use the Collapse and Shrink functions. Shrink removes all slack from the end of the container, but leaves any empty elements in the middle or at the start.
+
+```cpp
+for (int32 i = 0; i < 10; i += 2)
+{
+	FruitMap.Remove(i);
+}
+// FruitMap == [
+// 	{ Key: 9, Value: "Fruit9" },
+// 	<invalid>,
+// 	{ Key: 7, Value: "Fruit7" },
+// 	<invalid>,
+// 	{ Key: 5, Value: "Fruit5" },
+// 	<invalid>,
+// 	{ Key: 3, Value: "Fruit3" },
+// 	<invalid>,
+// 	{ Key: 1, Value: "Fruit1" },
+// 	<invalid>
+// ]
+
+FruitMap.Shrink();
+// FruitMap == [
+// 	{ Key: 9, Value: "Fruit9" },
+// 	<invalid>,
+// 	{ Key: 7, Value: "Fruit7" },
+// 	<invalid>,
+// 	{ Key: 5, Value: "Fruit5" },
+// 	<invalid>,
+// 	{ Key: 3, Value: "Fruit3" },
+// 	<invalid>,
+// 	{ Key: 1, Value: "Fruit1" }
+// ]
+```
+
+Shrink only removed one invalid element in the code above because there was only one empty element at the end. To remove all slack, use the Compact function first so that the empty spaces will be grouped together in preparation for Shrink.
+
+```cpp
+FruitMap.Compact();
+// FruitMap == [
+// 	{ Key: 9, Value: "Fruit9" },
+// 	{ Key: 7, Value: "Fruit7" },
+// 	{ Key: 5, Value: "Fruit5" },
+// 	{ Key: 3, Value: "Fruit3" },
+// 	{ Key: 1, Value: "Fruit1" },
+// 	<invalid>,
+// 	<invalid>,
+// 	<invalid>,
+// 	<invalid>
+// ]
+
+FruitMap.Shrink();
+// FruitMap == [
+// 	{ Key: 9, Value: "Fruit9" },
+// 	{ Key: 7, Value: "Fruit7" },
+// 	{ Key: 5, Value: "Fruit5" },
+// 	{ Key: 3, Value: "Fruit3" },
+// 	{ Key: 1, Value: "Fruit1" }
+// ]
+```
+
+## KeyFuncs
+
+> 具体参考[官方文档](https://dev.epicgames.com/documentation/en-us/unreal-engine/map-containers-in-unreal-engine#keyfuncs)
+
+As long as a type has an `operator==` and a non-member `GetTypeHash` overload, you can use it as a key type for a TMap without any changes. However, you may want to use types as keys without overloading those functions. In these cases, you can provide your own custom KeyFuncs. To create KeyFuncs for your key type, you must define two typedefs and three static functions
+
+Type Definition:
+
+1. `KeyInitType` Type used to pass keys around.
+2. `ElementInitType` Type used to pass elements around.
+
+Function:
+
+1. `KeyInitType GetSetKey(ElementInitType Element)` Returns the key of an element.
+2. `bool Matches(KeyInitType A, KeyInitType B)` Returns true if A and B are equivalent, false otherwise.
+3. `uint32 GetKeyHash(KeyInitType Key)` Returns the hash value of Key.
+
+```cpp
+struct FMyStruct
+{
+	// String which identifies our key
+	FString UniqueID;
+
+	// Some state which doesn't affect struct identity
+	float SomeFloat;
+
+	explicit FMyStruct(float InFloat)
+		: UniqueID (FGuid::NewGuid().ToString())
+		, SomeFloat(InFloat)
+	{
+
+	}
+};
+
+template <typename ValueType>
+struct TMyStructMapKeyFuncs :
+	BaseKeyFuncs<
+		TPair<FMyStruct, ValueType>,
+		FString
+	>
+{
+
+private:
+	typedef BaseKeyFuncs<
+		TPair<FMyStruct, ValueType>,
+		FString
+	> Super;
+
+public:
+	typedef typename Super::ElementInitType ElementInitType;
+	typedef typename Super::KeyInitType     KeyInitType;
+
+	static KeyInitType GetSetKey(ElementInitType Element)
+	{
+		return Element.Key.UniqueID;
+	}
+
+	static bool Matches(KeyInitType A, KeyInitType B)
+	{
+		return A.Compare(B, ESearchCase::CaseSensitive) == 0;
+	}
+
+	static uint32 GetKeyHash(KeyInitType Key)
+	{
+		return FCrc::StrCrc32(*Key);
+	}
+};
+
+Copy full snippet
+
+```
