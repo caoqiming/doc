@@ -90,7 +90,7 @@ SpawnActor 有很多重载，可以返回被创建的对象的指针。
 想要显示 ui 需要
 
 1. 打开“关卡蓝图”
-2. 在开始事件里 add widget
+2. 在开始事件里 create widget
 3. 在 return value 后 add to view point
 
 ### 显示鼠标
