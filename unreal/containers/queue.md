@@ -8,7 +8,7 @@
 template<typename T, EQueueMode Mode>  class TQueue
 
 // Adds an item to the head of the queue.To be called only from producer thread(s).
-bool Enqueue ( const FElementType& Item)
+bool Enqueue (const FElementType& Item)
 
 // Removes and returns the item from the tail of the queue.To be called only from consumer thread.
 bool Dequeue(FElementType& OutItem)

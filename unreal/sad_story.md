@@ -24,3 +24,4 @@
 4. 如何调试 cpp 参考这个[视频](https://www.youtube.com/watch?v=YsqU1-hQdQo&ab_channel=SidaLiu) 虽然是 windows 的，但 mac 也差不多，可惜没早点看见。
 5. 指针没有初始化为 NULL ，我以为编译器会自动初始化为 NULL ，看起来并没有
 6. ~~苹果的 Tagged Pointer~~
+7. 打包之后 wakuwaku 不播放，是因为选择了 cook，因为这个东西是代码播放的，UE 以为没用，就没打包进去。在项目设置里配置一下 `additional asset directories to cook` 就行了

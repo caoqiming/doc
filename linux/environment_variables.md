@@ -29,8 +29,11 @@ cat /proc/{PID}/environ | tr '\0' '\n'
 
 ~~备份一下，这个丢了就很费劲~~
 
+`code ~/.zshrc`
+
 ```bash
 source /Users/glimmer/.gvm/scripts/gvm
 eval "$(/opt/homebrew/bin/brew shellenv)"
 export GOPROXY=https://goproxy.cn
+export PATH=/Users/glimmer/bin:$PATH
 ```
