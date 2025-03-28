@@ -101,4 +101,4 @@ SpawnActor 有很多重载，可以返回被创建的对象的指针。
 
 ## F&Q
 
-- unreal 里看不到 cpp 类。 这时候在 unreal 里直接点击编译，之后就能看到了。
+- unreal 里看不到 cpp 类。 这时候在 unreal 里直接点击编译，之后就能看到了。(mac 没有这个问题)
