@@ -24,3 +24,5 @@
 4. 如何调试 cpp 参考这个[视频](https://www.youtube.com/watch?v=YsqU1-hQdQo&ab_channel=SidaLiu) 虽然是 windows 的，但 mac 也差不多，可惜没早点看见。
 5. 指针没有初始化为 NULL ，我以为编译器会自动初始化为 NULL ，看起来并没有
 6. ~~苹果的 Tagged Pointer~~
+
+找到这个迷宫的出处了，是德国公司 Siebenstein-Spiele 的 https://www.puzzlemaster.ca/solutions/6939-minotaurus-maze
