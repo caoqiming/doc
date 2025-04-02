@@ -37,3 +37,5 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 export GOPROXY=https://goproxy.cn
 export PATH=/Users/glimmer/bin:$PATH
 ```
+
+`~/.zprofile` 里也有一部分
