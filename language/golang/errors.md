@@ -9,7 +9,7 @@ Unwrap() error
 Unwrap() []error
 ```
 
-If e.Unwrap() returns a non-nil error w or a slice containing w, then we say that e wraps w. 
+If e.Unwrap() returns a non-nil error w or a slice containing w, then we say that e wraps w.
 
 Successive unwrapping of an error creates a tree. The `Is` and `As` functions inspect an error's tree by examining first the error itself followed by the tree of each of its children in turn (pre-order, depth-first traversal).
 
@@ -189,10 +189,9 @@ var errorType = reflectlite.TypeOf((*error)(nil)).Elem()
 
 ```
 
-
 ## nil
 
-golang 的 err 有一个坑，下面这段代码的 err 会始终是 not nil 的。 因为 nil 的 error 和 nil 的 *MyErr 是不一样的。
+golang 的 err 有一个坑，下面这段代码的 err 会始终是 not nil 的。 因为 nil 的 error 和 nil 的 \*MyErr 是不一样的。
 
 ```go
 type MyErr struct {
@@ -202,19 +201,24 @@ func (e *MyErr) Error() string {
 	return ""
 }
 
-func test() *MyErr {
+func getNilMyErr() *MyErr {
 	return nil
 }
 
+func test() error {
+	return getNilMyErr()
+}
+
 func main() {
-	var err *error
-	err = test()
+	err := test()
 	if err != nil {
 		fmt.Println("err not nil")
 	} else {
 		fmt.Println("err is nil")
 	}
 }
+
 ```
 
+`err := test()` 得到的 `err` 是 `error` 接口类型，其值为 `(*MyErr, nil)`，并非 `nil` 接口值。
 修复这个问题需要将 `var err *error` 修改为 `var err *MyErr`

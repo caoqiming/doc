@@ -133,6 +133,12 @@ docker container prune -f
 docker rmi $(docker images -f "dangling=true" -q)
 ```
 
+### 清除没有标签的镜像
+
+```bash
+docker rmi $(docker images -q -f "dangling=true")
+```
+
 ## 镜像
 
 ## 将容器保存为镜像
