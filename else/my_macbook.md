@@ -35,3 +35,8 @@ export NDK_ROOT="/Users/glimmer/Library/Android/sdk/ndk/25.1.8937393"
 ```
 
 > zsh 会 自动执行这个文件 `～/.zprofile`
+
+## miniconda
+
+安装在
+`/Users/glimmer/miniconda3`

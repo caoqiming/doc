@@ -17,20 +17,16 @@ rm ~/miniconda3/miniconda.sh
 source ~/miniconda3/bin/activate
 ```
 
-根据提示
-
-```bash
-
-```
-
 ## usage
 
 ```bash
 # create a new environment
-conda create -n <env-name>
+conda create -n <env-name> python=3.9.9
 
 # list all environments
 conda info --envs
+
+conda env remove --name <env-name>
 ```
 
 ## Installing packages

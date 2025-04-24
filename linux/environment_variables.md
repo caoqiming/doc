@@ -36,6 +36,7 @@ source /Users/glimmer/.gvm/scripts/gvm
 eval "$(/opt/homebrew/bin/brew shellenv)"
 export GOPROXY=https://goproxy.cn
 export PATH=/Users/glimmer/bin:$PATH
+export HOMEBREW_API_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles/api"
 ```
 
 `~/.zprofile` 里也有一部分
