@@ -32,6 +32,7 @@ export PATH="$PATH:/Users/glimmer/Library/Android/sdk/platform-tools:/Users/glim
 
 export NDKROOT="/Users/glimmer/Library/Android/sdk/ndk/25.1.8937393"
 export NDK_ROOT="/Users/glimmer/Library/Android/sdk/ndk/25.1.8937393"
+export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles
 ```
 
 > zsh 会 自动执行这个文件 `～/.zprofile`
@@ -40,3 +41,23 @@ export NDK_ROOT="/Users/glimmer/Library/Android/sdk/ndk/25.1.8937393"
 
 安装在
 `/Users/glimmer/miniconda3`
+
+## brew
+
+```bash
+export HOMEBREW_NO_INSTALL_FROM_API=1
+```
+
+```bash
+cd "$(brew --repo)"
+git remote set-url origin https://mirrors.ustc.edu.cn/brew.git
+
+```
+
+复原
+
+```bash
+cd "$(brew --repo)"
+git remote set-url origin https://github.com/Homebrew/brew
+
+```

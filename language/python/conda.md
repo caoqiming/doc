@@ -21,7 +21,7 @@ source ~/miniconda3/bin/activate
 
 ```bash
 # create a new environment
-conda create -n <env-name> python=3.9.9
+conda create -n <env-name> python=3.9
 
 # list all environments
 conda info --envs
