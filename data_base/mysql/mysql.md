@@ -3,6 +3,13 @@
 ## 常用命令
 
 ```sql
+-- 创建用户
+CREATE USER 'rent_rw'@'%' IDENTIFIED BY '123';
+-- 授权读写权限
+GRANT SELECT, INSERT, UPDATE, DELETE ON rent.* TO 'rent_rw'@'%';
+-- 刷新权限
+FLUSH PRIVILEGES;
+
 -- 查询最大连接数
 show variables like 'max_connections';
 -- 设置最大连接数
