@@ -16,6 +16,7 @@ export PATH=$JAVA_HOME/bin:$PATH
 ## 不同进程的环境变量
 
 在 Unix/Linux 系统中，子进程会继承父进程的环境变量。但是，子进程可以通过调用 setenv 或 putenv 等函数来修改自己的环境变量，而不会影响父进程或其他子进程的环境变量。
+
 要查看一个进程的环境变量
 
 ```bash
@@ -24,6 +25,12 @@ cat /proc/{PID}/environ | tr '\0' '\n'
 
 这个文件的分割符是`\0`，因此这里将其替换为换行方便查看
 这里的环境变量是这个进程初始的环境变量，想要获取当前的环境变量需要`ptrace`系统调用
+
+## BASH_ENV
+
+When Bash is started non-interactively, to run a shell script, for example, it looks for the variable `BASH_ENV` in the environment, expands its value if it appears there, and uses the expanded value as the name of a file to read and execute.
+
+When invoked as an interactive shell with the name `sh`, Bash looks for the variable `ENV`, expands its value if it is defined, and uses the expanded value as the name of a file to read and execute.
 
 ## 常用环境变量
 

@@ -110,6 +110,7 @@ var _ = Describe("Books", func() {
 运行测试
 
 ```bash
+ginkgo  -v --focus "your pattern"
 go test -v -count=1 -ginkgo.focus "user"
 ```
 
