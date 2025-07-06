@@ -104,13 +104,20 @@ from
 ```bash
 # 如果没有docker 先安装docker
 curl -fsSL https://get.docker.com | sudo bash -s docker --mirror Aliyun
-docker run --name mysql  -v /my/own/datadir:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=cqm -p 3306:3306 -d mysql:latest
+docker run --name mysql  -v /my/own/datadir:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=whatcanisay -p 3306:3306 -d mysql:latest
 ```
 
-连接到 mysql
+使 mysql 与其他容器公用网络
 
 ```bash
-
+docker network create glimmer-app
+docker run -d \
+  --name mysql-glimmer-app \
+  -v /my/own/datadir:/var/lib/mysql \
+  --network glimmer-app \
+  -p 3306:3306 \
+  -e MYSQL_ROOT_PASSWORD=whatcanisay \
+  mysql:latest
 ```
 
 ## mysql 时间类型

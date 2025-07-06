@@ -33,6 +33,7 @@ export PATH="$PATH:/Users/glimmer/Library/Android/sdk/platform-tools:/Users/glim
 export NDKROOT="/Users/glimmer/Library/Android/sdk/ndk/25.1.8937393"
 export NDK_ROOT="/Users/glimmer/Library/Android/sdk/ndk/25.1.8937393"
 export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles
+export AIRFLOW_HOME=/Users/glimmer/Documents/code/playground/airflow/home
 ```
 
 > zsh 会 自动执行这个文件 `～/.zprofile`
