@@ -81,24 +81,6 @@ void UGameController::BeginPlay()
 
 SpawnActor 有很多重载，可以返回被创建的对象的指针。
 
-## UI
-
-> 参考这个[教程](https://www.bilibili.com/video/BV1gT41137Vp)
-
-### 显示 ui
-
-想要显示 ui 需要
-
-1. 打开“关卡蓝图”
-2. 在开始事件里 create widget
-3. 在 return value 后 add to view point
-
-### 显示鼠标
-
-1. 打开关卡蓝图
-2. get player controller
-3. set show mouse cursor
-
 ## F&Q
 
 - unreal 里看不到 cpp 类。 这时候在 unreal 里直接点击编译，之后就能看到了。(mac 没有这个问题)
