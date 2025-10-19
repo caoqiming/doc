@@ -69,3 +69,11 @@ int main() {
 - Space:
   Worst-case scenario: O(n) due to unbalanced partitioning leading to a skewed recursion tree requiring a call stack of size O(n).
   Best-case scenario: O(log n) as a result of balanced partitioning leading to a balanced recursion tree with a call stack of size O(log n).
+
+## Compared with heap sort
+
+Although both algorithms have the same asymptotic complexity of O(nlogn), Quicksort's constant factor is generally smaller. This means that for the same input size N, Quicksort performs fewer actual operations and requires less execution time.
+
+The primary reason for this is Locality of Reference in memory access. During its partitioning process, Quicksort tends to access elements sequentially or locally, which allows it to better utilize the CPU cache and significantly increase its speed.
+
+In contrast, Heapsort has poor cache-friendliness. When maintaining the heap structure, element swaps often occur between widely separated array indices (e.g., the root and a leaf), leading to lower overall execution efficiency compared to Quicksort.

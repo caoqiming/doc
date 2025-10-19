@@ -37,3 +37,5 @@ func RadixSortOneRound(nums []IntLike, radix int) {
 	copy(nums, temp)
 }
 ```
+
+> 每一轮排序，先统计每个数字的当前排序用的位数在 0 ～ 9 中的分布，用一个 list 存储。再求前缀和。前缀可以用作这个数字的 bucket 的最右侧的一个指针。然后从后向前遍历（需要一个 temp 数组作为缓存），将元素放进自己的 bucket，并移动 bucket 的指针。因为这个过程是稳定的，所以多轮之后最终可以获取正确的顺序。
