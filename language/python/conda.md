@@ -56,3 +56,12 @@ conda install conda-forge::numpy
 ```
 
 > You can also override the default channels in your .condarc file.
+
+## export environment
+
+```bash
+# export
+conda env export > environment.yml
+# create
+conda env create -f environment.yml
+```

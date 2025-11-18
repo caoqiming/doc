@@ -34,9 +34,7 @@ int partition(vector<int>& arr, int low, int high) {
 
 // the QuickSort function implementation
 void quickSort(vector<int>& arr, int low, int high) {
-
     if (low < high) {
-
         // pi is the partition return index of pivot
         int pi = partition(arr, low, high);
 

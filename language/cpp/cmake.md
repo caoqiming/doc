@@ -49,5 +49,7 @@ list(APPEND CMAKE_PREFIX_PATH "/usr/local/opt/libomp")
 mkdir build
 cd build
 cmake ..
+# 或者
+cmake -DCMAKE_BUILD_TYPE=Debug ..
 make
 ```
