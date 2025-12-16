@@ -42,6 +42,8 @@ f7ef9cec7970   bridge    bridge    local
 1be0b00e6146   none      null      local
 ```
 
+创建容器时指定其网络使用 `--network` 参数
+
 #### bridge
 
 ```bash
