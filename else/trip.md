@@ -1,4 +1,4 @@
-# 【WIP】不用一个人去巴黎的旅行计划
+# Rome, by all means, Rome
 
 ## 日程安排
 
@@ -92,21 +92,31 @@ Milano P.Garibaldi (Italy) 12:24
     TERRACES (by stairs)
     DUOMO MUSEUM and CHURCH OF SAN GOTTARDO
 
+- 14:30 Panzerotti Luini 面包店，吃 Panzerotto “油炸版的迷你披萨饺”
+  Cioccolatitaliani 冰淇淋店，就在面包店对面。开心果冰淇淋。
+
 - 15:00 **斯福尔扎古堡**
 
   > 文艺复兴时期城堡群，内含多座博物馆与米开朗基罗遗作《隆达尼尼哀悼基督》。
 
   **门票已预订 15:00**
 
-- 16:00 **森皮奥内公园**
+- 16:30 **森皮奥内公园**
   > 城堡后方景观公园，湖景与通向和平之门的视轴最佳，是市民休闲地。
-- 16:30 **和平之门**
+- 17:00 **和平之门**
   > 新古典主义凯旋门，雕塑象征和平与欧洲统一。
-- 17:00 **恩宠圣母**
+- 17:30 **恩宠圣母**
 
   > 文艺复兴时期修建的赤陶色教堂，内部采用精美的哥特式装饰风格，收藏有达芬奇名作《最后的晚餐》。
 
   最后的晚餐就别想了，预约已经排到 26 年三月份了。
+
+- 18:30 **圣盎博罗削圣殿** Basilica di Sant'Ambrogio
+
+  > 建于公元 4 世纪，罗曼式建筑是米兰最古老教堂、最具象征意义的教堂之一。
+
+- 19:30 Da Zero 晚饭
+  **已预订 19:30 [#157316624](https://www.quandoo.it/cn/edit-reservation/overview/892955b3-db91-4f58-903e-824703cfcb00?src=success)**
 
 ### 第 6 天
 
@@ -115,9 +125,6 @@ Milano P.Garibaldi (Italy) 12:24
 - 9:00 埃马努埃莱二世拱廊
 
   > 19 世纪玻璃穹顶与铁框拱廊，马赛克地面与奢侈品牌云集，被誉为“米兰客厅”。
-
-- 9:30 Panzerotti Luini 面包店，吃 Panzerotto “油炸版的迷你披萨饺”
-  Cioccolatitaliani 冰淇淋店，就在面包店对面。开心果冰淇淋。
 
 - 10:00 购物 Rinascente Milano
 
@@ -138,6 +145,11 @@ Milano P.Garibaldi (Italy) 12:24
 
 - 16:30 Milano Centrale (Italy) **FR 9647 FRECCIAROSSA 1000** 有预订座位（15\*4）
   Roma Termini (Italy) 19:40
+
+- 20:00 Gelateria Fassi 冰淇淋
+- 20:30 Ristorante Pizza Forum 披萨
+  **已预订 28 日 20:30**
+- 21:00 可以看看晚上的罗斗，就在饭店边上
 
 ### 第 7 天
 
@@ -173,7 +185,9 @@ Milano P.Garibaldi (Italy) 12:24
 
   无需门票
 
-- 12:00 TODO 午饭
+- 12:00 pompi 提拉米苏 ，
+  Ristorante Agrodolce Roma 战斧牛排 牛尾黑松露奶酪
+  **已预订 29 日 12:00**
 
 - 13:30 特雷维喷泉 (Fontana di Trevi)
 
@@ -197,7 +211,9 @@ Milano P.Garibaldi (Italy) 12:24
   > 梯级与教堂立面及周边奢侈街区形成经典都市景框。
 - 16:30 苹丘(Pincio)看日落，顺便看一眼人民广场(Piazza del Popolo)
   > 日落视角俯瞰双塔与辐射街道布局最佳位置。
-- 17:00 TODO 晚饭
+- 17:00 La Nuova Piazzetta Navona
+  > +390669224081, 没找到预订网址，打电话试试
+  > Risotto Scampi 烩饭，必点。 Carbonara 意面，Pasta zuc Gamb 鳌虾意面
 - 18:00 逛街&购物
 
 备选： 博尔盖赛美术博物馆，国立现代艺术美术馆
@@ -249,7 +265,8 @@ Milano P.Garibaldi (Italy) 12:24
 
   无需门票
 
-- 19:00 TODO 晚饭
+- 19:00 Quel che c’è laboratorio Di Cucina
+  +393917786748
 - 19:30 国会大厦广场
 
   > 米开朗基罗设计几何铺地与雕塑轴线组织三座宫殿。
@@ -287,13 +304,3 @@ Milano P.Garibaldi (Italy) 12:24
 1 月 1 日，星期 四
 返回都柏林
 北欧 SK682->转机哥本哈根->都柏林 11:55->18:20 2578 元
-
-### food
-
-- dazero 的披萨
-- Gelato 冰冻甜点
-
-## 火车票
-
-可以选择通票[Interrail Pass](https://www.interrail.eu/en/interrail-passes/global-pass?utm_medium=cpc&utm_source=google&utm_campaign=IR_ROE_EN_DO_Paid-Search_Brand-AlwaysOn&utm_id=20907769408&utm_content=fallback&gclsrc=aw.ds&gad_source=1&gad_campaignid=20907769408&gbraid=0AAAAAD8teh9GTrPbsAg_Fusp1b-df7p4w&gclid=CjwKCAiAlfvIBhA6EiwAcErpyaeEca0BIpycEZv1seQ_S8P6LG8PvKjugoiJlY3yRCVaoGGBBZfgPBoC7ioQAvD_BwE)
-选择通票之后也有些座位需要预订，需要额外加钱，所以需要调研一下是不是直接买更划算。。。
