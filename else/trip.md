@@ -302,5 +302,5 @@ Milano P.Garibaldi (Italy) 12:24
 ### 第 10 天
 
 1 月 1 日，星期 四
-返回都柏林
-北欧 SK682->转机哥本哈根->都柏林 11:55->18:20 2578 元
+Rome Ciampino 15:00 - Cork 17:15 FR1656
+(To be continue...)
