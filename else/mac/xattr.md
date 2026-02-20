@@ -4,4 +4,7 @@
 
 ```bash
 xattr -cr chromedriver
+
+# 对当前路径下的所有文件都执行
+find . -type f -exec xattr -cr {} +
 ```
