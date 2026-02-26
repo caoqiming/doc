@@ -21,6 +21,12 @@ git push origin --delete <branch>
 git branch -d <branch>
 # 强制pull
 git reset --hard remotes/origin/get_report_url
+# 回退到 commit，该commit之后的内容会被抛弃
+git reset --hard
+
+# 删除不希望被git管理的文件
+git rm -r --cached '.idea'
+
 git pull
 # 本地压缩commit
 git rebase -i commit-id

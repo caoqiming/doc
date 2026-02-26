@@ -11,8 +11,13 @@
 ## 实践
 
 > SfM 可以用 COLMAP 完成，但 COLMAP 依赖cuda，所以没法在 mac 上 MVS
+> 也可以用 openMVS
 
-首先进行SfM
+首先进行SfM，在 colmap gui 模式下，新建项目，再自动重建
+
+```bash
+colmap gui
+```
 
 再对图像进行去畸变（undistortion），并将结果保存为 MVS 的输入格式。
 
@@ -29,9 +34,34 @@ MVS 可以用 openMVS
 /Users/glimmer/Downloads/OpenMVS_macOS_arm64/InterfaceCOLMAP -i dense -o scene.mvs --image-folder images
 ```
 
-生成 OpenMVS 的项目文件 scene.mvs
-生成稠密点云 scene_dense.mvs 以及 ply 文件
+> 这里 --image-folder 是基于 -i 指定的 dense 文件夹的，所以直接是 images就行了
+
+现在有 scene.mvs
 
 ```bash
-/Users/glimmer/Downloads/OpenMVS_macOS_arm64/DensifyPointCloud scene.mvs
+/Users/glimmer/Downloads/OpenMVS_macOS_arm64/DensifyPointCloud --max-threads 16 scene.mvs
+```
+
+现在有 scene_dense.mvs 以及 scene_dense.ply
+
+目前获得的模型只有点，我们需要进一步生成面. 这里是将点变成面，但是还没有颜色。之前点云的颜色是写在点里的。仅用于预览，不会影响后续的贴图的逻辑。
+
+```bash
+/Users/glimmer/Downloads/OpenMVS_macOS_arm64/ReconstructMesh scene_dense.mvs --max-threads 16
+```
+
+现在有 scene_dense_mesh.ply
+
+<!-- Mesh Refinement (optional)
+
+```bash
+/Users/glimmer/Downloads/OpenMVS_macOS_arm64/RefineMesh scene_dense.mvs -m scene_dense_mesh.ply -o scene_dense_mesh_refine.mvs --scales 1 --max-face-area 16
+```
+
+现在有 scene_dense_mesh_refine.ply -->
+
+最后一步。这一步会读取你的原始照片，并将它们投影到模型上。在执行这一步之前先在blender里将模型简化一下。使用 Decimate ，减少面的数量。并可以删除部分不需要的点。并导出为 scene_dense_mesh_decimate.ply
+
+```bash
+/Users/glimmer/Downloads/OpenMVS_macOS_arm64/TextureMesh  scene_dense.mvs -m scene_dense_mesh_decimate.ply  --export-type obj --max-threads 16 --local-seam-leveling 0 --global-seam-leveling 0
 ```

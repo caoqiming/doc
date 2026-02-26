@@ -6,7 +6,7 @@ MDP 动态规划（Dynamic Programming, DP）求解方法分为 value iteration 
 
 ## value iteration
 
-利用[贝尔曼最优方程](./bellman_equation.md) (Bellman Optimality Equation) 迭代更新 $V$
+利用[贝尔曼最优方程](./bellman_equation) (Bellman Optimality Equation) 迭代更新 $V$
 
 $$
 V_{k+1}(s) = \max_{a} \sum_{s', r} p(s', r | s, a) [r + \gamma V_k(s')]
